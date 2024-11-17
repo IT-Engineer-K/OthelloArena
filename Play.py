@@ -3,9 +3,9 @@ import json
 import OthelloAction
 import AuthCheck
 import OthelloLogic
-from evaluates import evaluate4
-othelloAction = OthelloAction.ActionClass(evaluate4)
-depth = 5
+from evaluates import evaluate15
+othelloAction = OthelloAction.ActionClass(evaluate15)
+depth = 4
 base_url = "http://tdu-othello.com/api/"
 headers = AuthCheck.auth_check(base_url)
 

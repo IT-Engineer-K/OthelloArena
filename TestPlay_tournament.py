@@ -2,8 +2,6 @@ import OthelloLogic
 
 def TestPlay(othelloAction1, othelloAction2, index1, index2, depth):
 	#sizeを変更することでテストプレイする盤面の大きさを変更できます。
-	#size = 4
-	#size = 6
 	size = 8
 	board = [[0 for i in range(size)] for j in range(size)]
 
@@ -37,7 +35,5 @@ def TestPlay(othelloAction1, othelloAction2, index1, index2, depth):
 
 	result = sum(sum(row) for row in board)
 	
-	OthelloLogic.printBoard(board)
-	print('result:', result)
-	
+	#OthelloLogic.printBoard(board)
 	return result

@@ -6,7 +6,7 @@ import numpy as np
 nb_funcs = len(evaluate_funcs)
 winlose = np.zeros((nb_funcs, nb_funcs))
 
-depth=2
+depth = 2
 
 for index1, evaluate_func1 in enumerate(evaluate_funcs):
     for index2, evaluate_func2 in enumerate(evaluate_funcs):
@@ -21,6 +21,8 @@ for index1, evaluate_func1 in enumerate(evaluate_funcs):
             winlose[index1][index2] = 1
         else:
             winlose[index1][index2] = 0
+        print(f"{index1}: ", result)
+    print()
 print(winlose)
 print(np.sum(winlose, axis=1))
 print(np.sum(winlose, axis=0))

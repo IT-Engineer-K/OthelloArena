@@ -13,7 +13,8 @@ class ActionClass:
 
         moves = OthelloLogic.getMoves(board, 1 if is_maximizing else -1, 8)
         if not moves:  # 合法手がない場合は評価関数に基づいたスコアを返す
-            return self.evaluate(board, player)
+            next_board = copy.deepcopy(board)
+            eval = self.alphaBetaMinimax(next_board, depth - 1, alpha, beta, False)
 
         if is_maximizing:
             max_eval = -float('inf')
@@ -37,7 +38,7 @@ class ActionClass:
             return min_eval
 
     # 次の手を決定する関数
-    def getAction(self, board, moves, depth=5):
+    def getAction(self, board, moves, depth=3):
 
         max_score = -float('inf')
         best_move = moves[0]
