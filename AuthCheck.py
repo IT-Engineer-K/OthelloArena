@@ -11,8 +11,9 @@ def auth_check(base_url):
 			token = s
 	else:
 		with open(token_path, mode='w') as f:
-			print('APIトークンが見つかりませんでした。APIトークンを入力してください。')
-			token = input()
+			print('APIトークンが見つかりませんでした。')
+			print('ここで取得: http://tdu-othello.com/home')
+			token = input('入力してください: ')
 			f.write(token)
 
 	while(True):
