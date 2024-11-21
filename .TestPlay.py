@@ -1,6 +1,6 @@
-import OthelloAction
+import Action as OthelloAction
 import OthelloLogic
-from evaluates import evaluate15
+from evaluates import evaluate1
 
 othelloAction = OthelloAction.ActionClass(evaluate_func=evaluate15)
 
