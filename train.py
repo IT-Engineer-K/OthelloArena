@@ -2,7 +2,7 @@ import subprocess
 import requests
 import os
 
-res = requests.get("https://aaaaaaaaaaaaaa.pythonanywhere.com/download")
+res = requests.get("https://aaaaaaaaaaaaaa.pythonanywhere.com/download/data.pickle")
 print(res.status_code)
 if res.status_code == 200:
     with open("data.pickle", "wb") as f:
@@ -12,3 +12,6 @@ for i in range(100):
     subprocess.run(["python", "tournament_loop.py"])
     with open("data.pickle", "rb") as f:
         requests.post("https://aaaaaaaaaaaaaa.pythonanywhere.com/upload", files={"file": f})
+
+with open("bestweights.npy", "rb") as f:
+    requests.post("https://aaaaaaaaaaaaaa.pythonanywhere.com/upload", files={"file": f})
