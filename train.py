@@ -13,5 +13,5 @@ for i in range(100):
     with open("data.pickle", "rb") as f:
         requests.post("https://aaaaaaaaaaaaaa.pythonanywhere.com/upload", files={"file": f})
 
-with open("bestweights.npy", "rb") as f:
-    requests.post("https://aaaaaaaaaaaaaa.pythonanywhere.com/upload", files={"file": f})
+    with open("bestweights.npy", "rb") as f:
+        requests.post("https://aaaaaaaaaaaaaa.pythonanywhere.com/upload", files={"file": f})
