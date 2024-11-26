@@ -1,11 +1,12 @@
 import requests
 import json
-import OthelloAction as OthelloAction
+import OthelloAction
 import AuthCheck
 import OthelloLogic
-from evaluates import evaluate_funcs
+from evaluates import gen_evaluates
+import numpy as np
 
-evaluate = evaluate_funcs[-1]
+evaluate = gen_evaluates(np.load('best_weights.npy'))
 othelloAction = OthelloAction.ActionClass(evaluate)
 depth = 4
 base_url = "http://tdu-othello.com/api/"

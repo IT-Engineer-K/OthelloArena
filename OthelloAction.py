@@ -1,9 +1,11 @@
 import OthelloLogic
 import Action
+from kubo import play_sound
 
 class ActionClass:
     def __init__(self, evaluate_func):
         self.evaluate = evaluate_func
+        self.action = Action.ActionClass(self.evaluate)
 
     # α-β剪定を用いたミニマックス関数
     def alphaBetaMinimax(self, board, depth, alpha, beta, is_maximizing):
@@ -39,4 +41,5 @@ class ActionClass:
 
     # 次の手を決定する関数
     def getAction(self, board, moves, depth=6):
-        return Action.getAction(board, moves, depth=6)
+        #play_sound(moves)
+        return self.action.getAction(board, moves, depth=depth)

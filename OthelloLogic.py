@@ -1,6 +1,7 @@
 import numpy as np
 import pickle
 from copy import deepcopy
+
 def copy(data):
 	return pickle.loads(pickle.dumps(data))
 #copy = deepcopy
