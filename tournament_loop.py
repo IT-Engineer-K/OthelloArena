@@ -78,10 +78,10 @@ for weights in weights_list:
         data["players"][toKey(depth, weights)] = new_data
 
 nb_players = len(data["players"].keys())
-if nb_players < 10:
+if nb_players < 30:
     enemies = list(data["players"].keys())
 else:
-    enemies = random.sample(list(data["players"].keys()), k=10)
+    enemies = random.sample(list(data["players"].keys()), k=30)
 
 # 対戦開始
 for key, player_data in data["players"].items():
